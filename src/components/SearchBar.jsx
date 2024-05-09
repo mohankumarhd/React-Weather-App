@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Details from "../pages/Details";
+import { Link } from "react-router-dom";
+import { WeatherAppContext } from "../WeatherAppContext";
 
 function SearchBar() {
-  const [searchInput, setSearchInput] = useState(null);
+  let weatherAppContext = useContext(WeatherAppContext);
 
   function handleSearchInput(event) {
     event.preventDefault();
-    setSearchInput(document.getElementById("username").value);
+    console.log(document.getElementById("username").value);
+    weatherAppContext.setSearchInput(document.getElementById("username").value);
+    console.log(weatherAppContext.searchInput);
   }
 
   return (
@@ -17,11 +21,9 @@ function SearchBar() {
           id="username"
           className="form-control"
           placeholder="Enter your Username..."
+          onBlur={handleSearchInput}
         />
-        <button type="submit">Submit</button>
       </form>
-
-      {searchInput && <Details searchInput={searchInput} />}
     </>
   );
 }
