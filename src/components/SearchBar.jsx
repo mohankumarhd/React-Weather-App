@@ -19,8 +19,10 @@ function SearchBar() {
         <input
           type="text"
           id="username"
-          className="form-control"
-          placeholder="Enter your Username..."
+          className="form-controlrounded check-button "
+          placeholder="City"
+          aria-describedby="search-addon "
+          aria-label="Search"
           onBlur={handleSearchInput}
         />
       </form>

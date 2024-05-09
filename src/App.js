@@ -11,12 +11,14 @@ function App() {
   return (
     <>
       <WeatherAppContext.Provider value={{ searchInput, setSearchInput }}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" exact element={<Home />}></Route>
-            <Route path="/details" exact element={<Details />}></Route>
-          </Routes>
-        </BrowserRouter>
+        <div className="container-fluid">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" exact element={<Home />}></Route>
+              <Route path="/details" exact element={<Details />}></Route>
+            </Routes>
+          </BrowserRouter>
+        </div>
       </WeatherAppContext.Provider>
     </>
   );

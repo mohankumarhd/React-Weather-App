@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import WeatherApiService from "../api/WeatherApi";
+import { Link } from "react-router-dom";
 
 function WeatherDisplay(props) {
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -25,6 +26,7 @@ function WeatherDisplay(props) {
 
   return (
     <>
+      <Link to="/">Home</Link>
       <h2>Current Weather</h2>
 
       {weather != null ? <p>{"description: " + weather.description}</p> : null}

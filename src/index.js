@@ -4,7 +4,7 @@ import jQuery from "jquery";
 import Popper from "popper.js";
 import bootstrap from "bootstrap/dist/js/bootstrap";
 import bootstarp from "bootstrap/dist/css/bootstrap.css";
-import "./index.css";
+import "./styles.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import * as mdb from "mdb-ui-kit";
