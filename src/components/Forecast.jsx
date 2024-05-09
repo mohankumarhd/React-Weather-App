@@ -11,13 +11,15 @@ function Forecast(props) {
         props.geoData.lon
       );
       let forecastWeatherResponse = await response.json();
-      setForecastWeather(forecastWeatherResponse);
+      setForecastWeather(JSON.stringify(forecastWeatherResponse));
     })();
   }, [props.geoData.lat, props.geoData.lon]);
 
   return (
     <>
-      <p>Forecast</p>
+      <p>
+        <pre>{forecaseWeather}</pre>
+      </p>
     </>
   );
 }

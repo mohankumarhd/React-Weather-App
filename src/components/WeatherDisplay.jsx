@@ -11,13 +11,15 @@ function WeatherDisplay(props) {
         props.geoData.lon
       );
       let currentWeatherResponse = await response.json();
-      setCurrentWeather(currentWeatherResponse);
+      setCurrentWeather(JSON.stringify(currentWeatherResponse));
     })();
   }, [props.geoData.lat, props.geoData.lon]);
 
   return (
     <>
-      <p>Weather Dispay</p>
+      <p>
+        <pre>{currentWeather}</pre>
+      </p>
     </>
   );
 }
