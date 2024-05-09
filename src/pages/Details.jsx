@@ -9,7 +9,7 @@ function Details(props) {
     lon: "",
   });
 
-  //Get geo data
+  //Get geo data git set
   useEffect(() => {
     (async () => {
       let response = await WeatherApiService.getGeoData(props.searchInput);
