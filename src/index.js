@@ -7,6 +7,7 @@ import bootstarp from "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import * as mdb from "mdb-ui-kit";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

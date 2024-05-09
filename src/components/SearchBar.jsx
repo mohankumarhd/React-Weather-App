@@ -2,18 +2,25 @@ import { useState } from "react";
 import Details from "../pages/Details";
 
 function SearchBar() {
-  const [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState(null);
 
   function handleSearchInput(event) {
-    setSearchInput(event.target.value);
+    event.preventDefault();
+    setSearchInput(document.getElementById("username").value);
   }
 
   return (
     <>
-      <label htmlFor="searchInput">
-        City/Location
-        <input type="text" id="searchInput" onBlur={handleSearchInput} />
-      </label>
+      <form onSubmit={handleSearchInput}>
+        <input
+          type="text"
+          id="username"
+          className="form-control"
+          placeholder="Enter your Username..."
+        />
+        <button type="submit">Submit</button>
+      </form>
+
       {searchInput && <Details searchInput={searchInput} />}
     </>
   );

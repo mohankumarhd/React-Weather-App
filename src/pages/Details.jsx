@@ -4,10 +4,7 @@ import WeatherDisplay from "../components/WeatherDisplay";
 import Forecast from "../components/Forecast";
 
 function Details(props) {
-  const [geoData, setGeoData] = useState({
-    lat: "",
-    lon: "",
-  });
+  const [geoData, setGeoData] = useState(null);
 
   //Get geo data git set
   useEffect(() => {
@@ -23,8 +20,8 @@ function Details(props) {
 
   return (
     <>
-      <WeatherDisplay geoData={geoData} />
-      <Forecast geoData={geoData} />
+      {geoData && <WeatherDisplay geoData={geoData} />}
+      {geoData && <Forecast geoData={geoData} />}
     </>
   );
 }
