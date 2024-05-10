@@ -28,11 +28,20 @@ function WeatherDisplay(props) {
     <>
       <Link to="/">Home</Link>
       <h2>Current Weather</h2>
+      <div className="col-lg-3">
+        <div className="card m-1">
+          <div className="card-body">
+            {weather != null ? (
+              <h5>{"Description: " + weather.description}</h5>
+            ) : null}
+            {main != null ? <div>{"Temperature: " + main.temp}</div> : null}
 
-      {weather != null ? <p>{"description: " + weather.description}</p> : null}
-      {main != null ? <p>{main.temp}</p> : null}
-      {main != null ? <p>{main.humidity}</p> : null}
-      {wind != null ? <p>{wind.speed}</p> : null}
+            {main != null ? <div>{"Humidity: " + main.humidity}</div> : null}
+
+            {wind != null ? <div>{"Speed: " + wind.speed}</div> : null}
+          </div>
+        </div>
+      </div>
     </>
   );
 }
