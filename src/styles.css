@@ -12,7 +12,13 @@ code {
     monospace;
 }
 
+.mask-2{
+  background-color: rgba(190, 216, 232, .5);
+}
 
-.check-button {
- 
+.card-2{
+  border-radius: 40px;
+}
+.section-2{
+  background-color: #f5f6f7;
 }
