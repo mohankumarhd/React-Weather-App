@@ -15,15 +15,13 @@ function Details(props) {
         weatherAppContext.searchInput
       );
       let geoDataResponse = await response.json();
-      setGeoData({
-        lat: geoDataResponse[0].lat,
-        lon: geoDataResponse[0].lon,
-      });
+      setGeoData(geoDataResponse[0]);
     })();
   }, [props.searchInput]);
 
   return (
     <>
+      {geoData != null && geoData.lat ? geoData.lat : "No data found"}
       {geoData && <WeatherDisplay geoData={geoData} />}
       {geoData && <Forecast geoData={geoData} />}
     </>
